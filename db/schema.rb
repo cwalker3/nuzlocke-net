@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_03_25_172917) do
+ActiveRecord::Schema[8.0].define(version: 2025_03_25_180150) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -19,6 +19,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_172917) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["title"], name: "index_games_on_title", unique: true
+  end
+
+  create_table "nuzlockes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "game_id", null: false
+    t.text "rules"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_nuzlockes_on_game_id"
+    t.index ["user_id"], name: "index_nuzlockes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,4 +43,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_25_172917) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "nuzlockes", "games"
+  add_foreign_key "nuzlockes", "users"
 end
