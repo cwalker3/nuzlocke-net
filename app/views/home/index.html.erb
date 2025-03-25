@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+<body>
+  <% if session[:user_id].nil? %>
+    <%= button_to 'Log in with Twitch', '/auth/twitch', data: { turbo: :false } %>
+  <% else %>
+    <p> 
+      <%=  "Hello #{current_user.name}" %>
+    </p>
+    <%= button_to 'Log out', '/logout', method: :delete %>
+  <% end %>
+</body>
+</html>
