@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_14_221131) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_14_222023) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -20,13 +20,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_221131) do
     t.bigint "area_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pokemon_id", null: false
     t.index ["area_id"], name: "index_area_pokemon_on_area_id"
+    t.index ["pokemon_id"], name: "index_area_pokemon_on_pokemon_id"
   end
 
   create_table "areas", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "game_id", null: false
+    t.index ["game_id"], name: "index_areas_on_game_id"
   end
 
   create_table "attempt_pokemon", force: :cascade do |t|
@@ -71,13 +75,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_221131) do
     t.index ["title"], name: "index_games_on_title", unique: true
   end
 
-  create_table "kills", force: :cascade do |t|
+  create_table "kill_events", force: :cascade do |t|
     t.bigint "trainer_pokemon_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "attempt_pokemon_id"
-    t.index ["attempt_pokemon_id"], name: "index_kills_on_attempt_pokemon_id"
-    t.index ["trainer_pokemon_id"], name: "index_kills_on_trainer_pokemon_id"
+    t.index ["attempt_pokemon_id"], name: "index_kill_events_on_attempt_pokemon_id"
+    t.index ["trainer_pokemon_id"], name: "index_kill_events_on_trainer_pokemon_id"
   end
 
   create_table "nuzlocke_rules", force: :cascade do |t|
@@ -99,13 +103,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_221131) do
     t.index ["user_id"], name: "index_nuzlockes_on_user_id"
   end
 
-  create_table "participations", force: :cascade do |t|
+  create_table "participation_events", force: :cascade do |t|
     t.bigint "trainer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "attempt_pokemon_id"
-    t.index ["attempt_pokemon_id"], name: "index_participations_on_attempt_pokemon_id"
-    t.index ["trainer_id"], name: "index_participations_on_trainer_id"
+    t.index ["attempt_pokemon_id"], name: "index_participation_events_on_attempt_pokemon_id"
+    t.index ["trainer_id"], name: "index_participation_events_on_trainer_id"
   end
 
   create_table "pokemon", force: :cascade do |t|
@@ -162,17 +166,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_221131) do
   end
 
   add_foreign_key "area_pokemon", "areas"
+  add_foreign_key "area_pokemon", "pokemon"
+  add_foreign_key "areas", "games"
   add_foreign_key "attempt_pokemon", "attempts"
   add_foreign_key "attempt_pokemon", "pokemon"
   add_foreign_key "attempts", "nuzlockes"
   add_foreign_key "defeated_trainers", "attempts"
   add_foreign_key "defeated_trainers", "trainers"
-  add_foreign_key "kills", "trainer_pokemon"
+  add_foreign_key "kill_events", "trainer_pokemon"
   add_foreign_key "nuzlocke_rules", "nuzlockes"
   add_foreign_key "nuzlocke_rules", "rules"
   add_foreign_key "nuzlockes", "games"
   add_foreign_key "nuzlockes", "users"
-  add_foreign_key "participations", "trainers"
+  add_foreign_key "participation_events", "trainers"
   add_foreign_key "trainer_pokemon", "pokemon"
   add_foreign_key "trainer_pokemon", "trainers"
   add_foreign_key "trainers", "areas"
