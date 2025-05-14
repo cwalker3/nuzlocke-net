@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_14_193614) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_14_194731) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -26,6 +26,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_193614) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["nuzlocke_id"], name: "index_attempts_on_nuzlocke_id"
+  end
+
+  create_table "defeated_trainers", force: :cascade do |t|
+    t.bigint "attempt_id", null: false
+    t.bigint "trainer_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attempt_id"], name: "index_defeated_trainers_on_attempt_id"
+    t.index ["trainer_id"], name: "index_defeated_trainers_on_trainer_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -142,6 +151,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_193614) do
   end
 
   add_foreign_key "attempts", "nuzlockes"
+  add_foreign_key "defeated_trainers", "attempts"
+  add_foreign_key "defeated_trainers", "trainers"
   add_foreign_key "kills", "trainer_pokemon"
   add_foreign_key "kills", "user_pokemon"
   add_foreign_key "nuzlocke_rules", "nuzlockes"
