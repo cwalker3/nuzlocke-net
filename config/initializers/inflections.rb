@@ -3,14 +3,16 @@
 # Add new inflection rules using the following format. Inflections
 # are locale specific, and you may define rules for as many different
 # locales as you wish. All of these examples are active by default:
+# config/initializers/inflections.rb
 ActiveSupport::Inflector.inflections(:en) do |inflect|
-  # inflect.plural /^(ox)$/i, "\\1en"
-  # inflect.singular /^(ox)en/i, "\\1"
-  inflect.irregular "user_pokemon", "user_pokemon"
-  inflect.irregular "trainer_pokemon", "trainer_pokemon"
-
-  # inflect.uncountable %w( fish sheep )
+  inflect.uncountable %w[
+    pokemon
+    attempt_pokemon
+    trainer_pokemon
+    area_pokemon
+  ]
 end
+
 
 # These inflection rules are supported but not enabled by default:
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
