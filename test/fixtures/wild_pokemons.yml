@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  status: 1
-  game: one
-  user: one
+  method: 1
+  rate: 1
+  area: one
 
 two:
-  status: 1
-  game: two
-  user: two
+  method: 1
+  rate: 1
+  area: two
