@@ -1,7 +1,7 @@
 class Nuzlocke < ApplicationRecord
   belongs_to :game
   belongs_to :user
-  has_many :nuzlocke:rules
+  has_many :nuzlocke_rules
   has_many :rules, through: :nuzlocke_rules
   has_many :attempts
 
