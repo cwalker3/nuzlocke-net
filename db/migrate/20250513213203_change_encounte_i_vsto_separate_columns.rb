@@ -4,8 +4,8 @@ class ChangeEncounteIVstoSeparateColumns < ActiveRecord::Migration[8.0]
 
     remove_column :user_pokemon, :ivs
 
-    add_column :species, :string
-    add_column :nickname, :string
+    add_column :user_pokemon, :species, :string
+    add_column :user_pokemon, :nickname, :string
     add_column :user_pokemon, :hp_iv, :string
     add_column :user_pokemon, :hp_attack, :string
     add_column :user_pokemon, :hp_defense, :string
