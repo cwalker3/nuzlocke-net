@@ -7,4 +7,10 @@ class TrainerPokemon < ApplicationRecord
 
   has_many :participation_events, dependent: :destroy, foreign_key: :trainer_pokemon_id
   has_many :challengers, through: :participation_events, foreign_key: :attempt_pokemon_id
+
+  enum gender: {
+    male: 'm',
+    female: 'f',
+    genderless: 'g'
+  }
 end

@@ -1,0 +1,402 @@
+{
+  "split": "Falkner",
+  "cap": 17,
+  "areas": [
+    {
+      "name": "New Bark Town",
+      "area_pokemon": [
+        {
+          "method": "Gift",
+          "level": 5,
+          "area_pokemon": [
+            {"species": "Chikorita", "chance": null},
+            {"species": "Cyndaquil", "chance": null},
+            {"species": "Totodile", "chance": null}
+          ]
+        },
+        {
+          "method": "Old Rod",
+          "level": 10,
+          "area_pokemon": [
+            {"species": "Surskit", "chance": 60},
+            {"species": "Finneon", "chance": 35},
+            {"species": "Mantyke", "chance": 5}
+          ]
+        },
+        {
+          "method": "Surf",
+          "level": 20,
+          "area_pokemon": [
+            {"species": "Krabby", "chance": 60},
+            {"species": "Psyduck", "chance": 30},
+            {"species": "Tentacool", "chance": 10}
+          ]
+        }
+      ],
+      "items": [
+        {"item": "Rare Candy", "quantity": 995, "source": "Elm's assistant"},
+        {"item": "Max Repel", "quantity": 995, "source": "Elm's assistant"},
+        {"item": "Full Restore", "quantity": 995, "source": "Elm's assistant"},
+        {"item": "Max Potion", "quantity": 995, "source": "Elm's assistant"},
+        {"item": "Max Elixir", "quantity": 995, "source": "Elm's assistant"},
+        {"item": "Poké Ball", "quantity": 995, "source": "Elm's assistant"},
+        {"item": "Oran Berry", "quantity": 10, "source": "Elm's assistant"},
+        {"item": "Chesto Berry", "quantity": 2, "source": "Elm's assistant"},
+        {"item": "Honey", "quantity": 99, "source": "Elm's assistant"},
+        {"item": "Flame Orb", "quantity": 2, "source": "Elm's assistant"},
+        {"item": "Toxic Orb", "quantity": 2, "source": "Elm's assistant"}
+      ]
+    },
+    {
+      "name": "Cherrygrove City",
+      "area_pokemon": [
+        {
+          "method": "Old Rod",
+          "level": 10,
+          "area_pokemon": [
+            {"species": "Goldeen", "chance": 60},
+            {"species": "Poliwag", "chance": 30},
+            {"species": "Magikarp", "chance": 5},
+            {"species": "Tentacool", "chance": 5}
+          ]
+        },
+        {
+          "method": "Surf",
+          "level": 20,
+          "area_pokemon": [
+            {"species": "Horsea", "chance": 60},
+            {"species": "Feebas", "chance": 35},
+            {"species": "Qwilfish", "chance": 5}
+          ]
+        }
+      ],
+      "items": [
+        {"item": "Old Rod", "quantity": 1, "source": "Fisherman in Pokemon Center"}
+      ],
+      "trainers": [
+        {
+          "name": "Rival 1 - Chikorita",
+          "type": "Mandatory",
+          "notes": "Player chose Chikorita",
+          "trainer_pokemon": [
+            {
+              "species": "Cyndaquil",
+              "gender": "m",
+              "level": 5,
+              "moves": ["Tackle", "Leer", "Fire Spin", null]
+            }
+          ]
+        },
+        {
+          "name": "Rival 1 - Cyndaquil",
+          "type": "Mandatory",
+          "notes": "Player chose Cyndaquil",
+          "trainer_pokemon": [
+            {
+              "species": "Totodile",
+              "gender": "m",
+              "level": 5,
+              "moves": ["Scratch", "Leer", "Water Gun", null]
+            }
+          ]
+        },
+        {
+          "name": "Rival 1 - Totodile",
+          "type": "Mandatory",
+          "notes": "Player chose Totodile",
+          "trainer_pokemon": [
+            {
+              "species": "Chikorita",
+              "gender": "m",
+              "level": 5,
+              "moves": ["Tackle", "Growl", "Mega Drain", null]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Route 29",
+      "area_pokemon": [
+        {
+          "method": "Grass",
+          "level": 4,
+          "area_pokemon": [
+            {"species": "Starly", "chance": 20},
+            {"species": "Sentret", "chance": 20},
+            {"species": "Shinx", "chance": 10},
+            {"species": "Zigzagoon", "chance": 10},
+            {"species": "Kricketot", "chance": 10},
+            {"species": "Hoothoot", "chance": 10},
+            {"species": "Rattata", "chance": 5},
+            {"species": "Taillow", "chance": 5},
+            {"species": "Poochyena", "chance": 4},
+            {"species": "Bidoof", "chance": 4},
+            {"species": "Pidgey", "chance": 1},
+            {"species": "Wurmple", "chance": 1}
+          ]
+        }
+      ],
+      "items": [
+        {"item": "Pecha Berry", "quantity": 1, "source": "Northeastern end of the route"}
+      ]
+    },
+    {
+    "name": "Route 46",
+    "area_pokemon": [
+      {
+        "method": "Grass",
+        "level": 4,
+        "area_pokemon": [
+          {"species": "Geodude", "chance": 20},
+          {"species": "Spearow", "chance": 20},
+          {"species": "Onix", "chance": 10},
+          {"species": "Caterpie", "chance": 10},
+          {"species": "Weedle", "chance": 10},
+          {"species": "Ledyba", "chance": 10},
+          {"species": "Pidgey", "chance": 5},
+          {"species": "Rattata", "chance": 5},
+          {"species": "Budew", "chance": 4},
+          {"species": "Ralts", "chance": 4},
+          {"species": "Skorupi", "chance": 1},
+          {"species": "Pichu", "chance": 1}
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Route 30",
+    "area_pokemon": [
+      {
+        "method": "Grass",
+        "level": 4,
+        "area_pokemon": [
+          {"species": "Numel", "chance": 30},
+          {"species": "Sunkern", "chance": 30},
+          {"species": "Growlithe", "chance": 20},
+          {"species": "Slugma", "chance": 10},
+          {"species": "Charmander", "chance": 5},
+          {"species": "Torchic", "chance": 5}
+        ]
+      },
+      {
+        "method": "Old Rod",
+        "level": 10,
+        "area_pokemon": [
+          {"species": "Surskit", "chance": 60},
+          {"species": "Remoraid", "chance": 30},
+          {"species": "Tentacool", "chance": 10}
+        ]
+      },
+      {
+        "method": "Surf",
+        "level": 20,
+        "area_pokemon": [
+          {"species": "Corphish", "chance": 60},
+          {"species": "Chinchou", "chance": 30},
+          {"species": "Shellder", "chance": 10}
+        ]
+      }
+    ],
+    "trainers": [
+      {
+        "name": "Youngster Papaya",
+        "type": "Mandatory",
+        "trainer_pokemon": [
+          {
+            "species": "Starly",
+            "gender": "m",
+            "level": 10,
+            "moves": ["Wing Attack", "Quick Attack", "Growl", "Thief"]
+          }
+        ]
+      },
+      {
+        "name": "Youngster Mikey",
+        "type": "Mandatory",
+        "trainer_pokemon": [
+          {
+            "species": "Pidgey",
+            "gender": "m",
+            "level": 10,
+            "moves": ["Tackle", "Peck", null, null]
+          },
+          {
+            "species": "Rattata",
+            "gender": "m",
+            "level": 11,
+            "moves": ["Bite", "Quick Attack", null, null]
+          }
+        ]
+      },
+      {
+        "name": "Bug Catcher Don",
+        "type": "Mandatory",
+        "trainer_pokemon": [
+          {
+            "species": "Caterpie",
+            "gender": "m",
+            "level": 9,
+            "moves": ["String Shot", "Mega Drain", "Leech Life", null]
+          },
+          {
+            "species": "Weedle",
+            "gender": "m",
+            "level": 9,
+            "moves": ["Poison Tail", "Leech Life", null, null]
+          },
+          {
+            "species": "Shedinja",
+            "gender": "m",
+            "level": 10,
+            "moves": ["Endeavor", "Faint Attack", "Tackle", "Shadow Sneak"]
+          },
+          {
+            "species": "Wormadam",
+            "gender": "m",
+            "level": 10,
+            "moves": ["Tackle", "Bug Bite", "Protect", null]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Route 31",
+    "area_pokemon": [
+      {
+        "method": "Grass",
+        "level": 4,
+        "area_pokemon": [
+          {"species": "Psyduck", "chance": 30},
+          {"species": "Krabby", "chance": 30},
+          {"species": "Corphish", "chance": 20},
+          {"species": "Finneon", "chance": 10},
+          {"species": "Squirtle", "chance": 5},
+          {"species": "Mudkip", "chance": 5}
+        ]
+      },
+      {
+        "method": "Old Rod",
+        "level": 10,
+        "area_pokemon": [
+          {"species": "Barboach", "chance": 60},
+          {"species": "Carvanha", "chance": 30},
+          {"species": "Wingull", "chance": 5},
+          {"species": "Slowpoke", "chance": 5}
+        ]
+      },
+      {
+        "method": "Surf",
+        "level": 20,
+        "area_pokemon": [
+          {"species": "Carvanha", "chance": 60},
+          {"species": "Chinchou", "chance": 30},
+          {"species": "Barboach", "chance": 10}
+        ]
+      }
+    ],
+    "items": [
+      {"item": "TM09 Bullet Seed", "quantity": 1, "source": "Entrance to Dark Cave"},
+      {"item": "Silk Scarf", "quantity": 1, "source": "Below the first ledge"},
+      {"item": "Exp. Share", "quantity": 1, "source": "Gift from Lyra before Violet City"}
+    ],
+    "trainers": [
+      {
+        "name": "Sinnoh Leader Candice",
+        "type": "Mandatory",
+        "notes": "PERMA HAIL",
+        "trainer_pokemon": [
+          {
+            "species": "Sneasel",
+            "gender": "f",
+            "level": 10,
+            "moves": ["Ice Shard", "Tackle", "Rock Tomb", null]
+          },
+          {
+            "species": "Swinub",
+            "gender": "f",
+            "level": 10,
+            "moves": ["Rock Tomb", "Ice Shard", "HP Ground", null]
+          },
+          {
+            "species": "Snover",
+            "gender": "f",
+            "level": 10,
+            "moves": ["Razor Leaf", "Leer", "Ingrain", "Icy Wind"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dark Cave",
+    "area_pokemon": [
+      {
+        "method": "Cave",
+        "level": 6,
+        "area_pokemon": [
+          {"species": "Geodude", "chance": 20},
+          {"species": "Zubat", "chance": 20},
+          {"species": "Sandshrew", "chance": 10},
+          {"species": "Mankey", "chance": 10},
+          {"species": "Nidoran-M", "chance": 10},
+          {"species": "Nidoran-F", "chance": 10},
+          {"species": "Spinarak", "chance": 5},
+          {"species": "Phanpy", "chance": 5},
+          {"species": "Gligar", "chance": 5},
+          {"species": "Dunsparce", "chance": 5}
+        ]
+      },
+      {
+        "method": "Old Rod",
+        "level": 10,
+        "area_pokemon": [
+          {"species": "Kabuto", "chance": 60},
+          {"species": "Omanyte", "chance": 30},
+          {"species": "Anorith", "chance": 5},
+          {"species": "Lileep", "chance": 5}
+        ]
+      },
+      {
+        "method": "Surf",
+        "level": 20,
+        "area_pokemon": [
+          {"species": "Remoraid", "chance": 60},
+          {"species": "Surskit", "chance": 35},
+          {"species": "Feebas", "chance": 5}
+        ]
+      }
+    ],
+    "items": [
+      {"item": "TM54 False Swipe", "quantity": 1, "source": "1F"}
+    ]
+  },
+  {
+    "name": "Violet City",
+    "area_pokemon": [
+      {
+        "method": "Old Rod",
+        "level": 10,
+        "area_pokemon": [
+          {"species": "Luvdisc", "chance": 60},
+          {"species": "Azurill", "chance": 40}
+        ]
+      },
+      {
+        "method": "Surf",
+        "level": 20,
+        "area_pokemon": [
+          {"species": "Staryu", "chance": 60},
+          {"species": "Lileep", "chance": 40}
+        ]
+      }
+    ],
+    "items": [
+      {"item": "Heart Scale", "quantity": 1, "source": "Pathway behind the Pokemon Center"},
+      {"item": "TM73 Thunder Wave", "quantity": 1, "source": "Surf northeast area"},
+      {"item": "PP Up", "quantity": 1, "source": "Surf northwest area"}
+    ]
+  }
+ ]
+}

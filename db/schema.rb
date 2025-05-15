@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_14_222023) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_15_230435) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -47,6 +47,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_222023) do
     t.integer "special_defense_iv"
     t.integer "speed_iv"
     t.bigint "attempt_id", null: false
+    t.string "gender", limit: 1
     t.index ["attempt_id"], name: "index_attempt_pokemon_on_attempt_id"
     t.index ["pokemon_id"], name: "index_attempt_pokemon_on_pokemon_id"
   end
@@ -68,11 +69,33 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_222023) do
     t.index ["trainer_id"], name: "index_defeated_trainers_on_trainer_id"
   end
 
+  create_table "game_items", force: :cascade do |t|
+    t.bigint "split_id", null: false
+    t.string "name"
+    t.string "source"
+    t.bigint "area_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "game_id"
+    t.integer "quantity"
+    t.index ["area_id"], name: "index_game_items_on_area_id"
+    t.index ["game_id"], name: "index_game_items_on_game_id"
+    t.index ["split_id"], name: "index_game_items_on_split_id"
+  end
+
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["title"], name: "index_games_on_title", unique: true
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "image_file_name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "kill_events", force: :cascade do |t|
@@ -125,6 +148,22 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_222023) do
     t.string "description"
   end
 
+  create_table "splits", force: :cascade do |t|
+    t.string "name"
+    t.integer "level_cap"
+    t.bigint "game_id", null: false
+    t.integer "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_splits_on_game_id"
+  end
+
+  create_table "tests", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "trainer_pokemon", force: :cascade do |t|
     t.bigint "trainer_id", null: false
     t.integer "hp_iv"
@@ -141,6 +180,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_222023) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "pokemon_id", null: false
+    t.string "gender", limit: 1
     t.index ["pokemon_id"], name: "index_trainer_pokemon_on_pokemon_id"
     t.index ["trainer_id"], name: "index_trainer_pokemon_on_trainer_id"
   end
@@ -150,6 +190,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_222023) do
     t.bigint "area_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "notes"
+    t.string "reward"
+    t.integer "type"
     t.index ["area_id"], name: "index_trainers_on_area_id"
   end
 
@@ -173,12 +216,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_14_222023) do
   add_foreign_key "attempts", "nuzlockes"
   add_foreign_key "defeated_trainers", "attempts"
   add_foreign_key "defeated_trainers", "trainers"
+  add_foreign_key "game_items", "areas"
+  add_foreign_key "game_items", "games"
+  add_foreign_key "game_items", "splits"
   add_foreign_key "kill_events", "trainer_pokemon"
   add_foreign_key "nuzlocke_rules", "nuzlockes"
   add_foreign_key "nuzlocke_rules", "rules"
   add_foreign_key "nuzlockes", "games"
   add_foreign_key "nuzlockes", "users"
   add_foreign_key "participation_events", "trainers"
+  add_foreign_key "splits", "games"
   add_foreign_key "trainer_pokemon", "pokemon"
   add_foreign_key "trainer_pokemon", "trainers"
   add_foreign_key "trainers", "areas"
