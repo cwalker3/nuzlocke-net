@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_15_230800) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_15_231125) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -86,8 +86,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_15_230800) do
     t.datetime "updated_at", null: false
     t.bigint "game_id"
     t.integer "quantity"
+    t.bigint "item_id", null: false
     t.index ["area_id"], name: "index_game_items_on_area_id"
     t.index ["game_id"], name: "index_game_items_on_game_id"
+    t.index ["item_id"], name: "index_game_items_on_item_id"
     t.index ["split_id"], name: "index_game_items_on_split_id"
   end
 
@@ -227,6 +229,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_15_230800) do
   add_foreign_key "defeated_trainers", "trainers"
   add_foreign_key "game_items", "areas"
   add_foreign_key "game_items", "games"
+  add_foreign_key "game_items", "items"
   add_foreign_key "game_items", "splits"
   add_foreign_key "kill_events", "trainer_pokemon"
   add_foreign_key "nuzlocke_rules", "nuzlockes"
